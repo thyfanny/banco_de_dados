@@ -20,10 +20,6 @@ function buscaPos(cpf){
   return usuarios.findIndex(usuario => usuario.cpf == cpf)
 }
 
-function existeUsuario(cpf){
-  return usuarios.some(usuario => usuario.cpf === cpf);
-}
-
 //rota padrão ou raiz
 app.get('/', (req, res) => {
     res.send('Rota raiz')
