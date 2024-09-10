@@ -33,13 +33,8 @@ app.get('/usuarios', (req, res) => {
 //lista usuario por cpf
 app.get('/usuarios/:cpf', (req, res) => {
     let index = req.params.cpf
-    if(index = []){
-      res.send("Usuário não cadastrado.")
-    }
-    const user_atual = buscarUser(index)
-    res.json(user_atual)
+    res.json(buscarUser(index))
   })
-
 
 //adiciona usuario
 app.post('/usuarios', (req, res) => {
@@ -50,9 +45,6 @@ app.post('/usuarios', (req, res) => {
 //delete
 app.delete('/usuarios/:cpf', (req, res) => {
     let index = buscaPos(req.params.cpf)
-    if(index = []){
-      res.send("Usuário não cadastrado.")
-    }
     usuarios.splice(index, 1)
     res.send("Usuário excluído com sucesso")
   })
